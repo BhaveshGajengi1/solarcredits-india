@@ -159,8 +159,8 @@ India has over **100 million small solar installations**, but traditional carbon
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/BhaveshGajengi1/solar-credits-india.git
-cd solar-credits-india
+git clone https://github.com/BhaveshGajengi1/solarcredits-india.git
+cd solarcredits-india
 ```
 
 2. **Install dependencies**
@@ -361,9 +361,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📞 Contact & Links
 
 - **GitHub**: [@BhaveshGajengi1](https://github.com/BhaveshGajengi1)
-- **Repository**: [solar-credits-india](https://github.com/BhaveshGajengi1/solar-credits-india)
-- **Issues**: [Report a bug](https://github.com/BhaveshGajengi1/solar-credits-india/issues)
-- **Discussions**: [Join the conversation](https://github.com/BhaveshGajengi1/solar-credits-india/discussions)
+- **Repository**: [solarcredits-india](https://github.com/BhaveshGajengi1/solarcredits-india)
+- **Issues**: [Report a bug](https://github.com/BhaveshGajengi1/solarcredits-india/issues)
+- **Discussions**: [Join the conversation](https://github.com/BhaveshGajengi1/solarcredits-india/discussions)
 
 ---
 
