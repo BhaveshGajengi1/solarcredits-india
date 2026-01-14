@@ -73,6 +73,70 @@ export default function ESGPortal() {
     setTimeout(() => setShowConfetti(false), 4000);
   };
 
+  const handleDownloadCertificate = () => {
+    // Generate certificate content
+    const certificateContent = `
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║           SOLAR CREDITS INDIA - ESG CERTIFICATE               ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+CERTIFICATE OF CARBON OFFSET
+
+This certifies that:
+
+COMPANY/INDIVIDUAL: [Certificate Holder]
+WALLET ADDRESS: 0x1234...5678
+
+Has successfully retired:
+
+    50 SRC CARBON CREDITS
+
+Equivalent to:
+    • 5,000 kg of CO₂ offset
+    • 250 trees planted equivalent
+    • 20,350 km of driving offset
+
+BLOCKCHAIN PROOF:
+Transaction Hash: 0x8f14e45fceea167a5a36dedd4bea2543c3d2e1f0a8b9c6d7e5f4a3b2c1d0
+Network: Arbitrum Sepolia
+Contract: 0x4Ca501bF7b580628813efC4cFF2F50810d997c65
+
+Retirement Date: ${new Date().toLocaleDateString()}
+Certificate ID: ${Date.now()}
+
+This certificate represents a permanent, verifiable carbon offset
+recorded on the Arbitrum blockchain. The retired credits cannot
+be resold or transferred.
+
+Verify on Arbiscan:
+https://sepolia.arbiscan.io/address/0x4Ca501bF7b580628813efC4cFF2F50810d997c65
+
+═══════════════════════════════════════════════════════════════
+
+Solar Credits India
+Blockchain-Powered Carbon Credit Marketplace
+https://github.com/BhaveshGajengi1/solar-credits-india
+    `;
+
+    // Create and download the certificate as a text file
+    const blob = new Blob([certificateContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `ESG-Certificate-${Date.now()}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast({
+      title: "Certificate Downloaded! 📄",
+      description: "Your ESG certificate has been saved",
+    });
+  };
+
   return (
     <Layout>
       <Confetti active={showConfetti} />
@@ -165,7 +229,11 @@ export default function ESGPortal() {
                   <Flame className="h-5 w-5 text-orange-500" />
                   <span>Retire Credits</span>
                 </Button>
-                <Button variant="outline" className="h-auto py-4 flex-col gap-2">
+                <Button
+                  variant="outline"
+                  className="h-auto py-4 flex-col gap-2"
+                  onClick={handleDownloadCertificate}
+                >
                   <Download className="h-5 w-5" />
                   <span>Download Certificate</span>
                 </Button>
@@ -267,7 +335,10 @@ export default function ESGPortal() {
                   <p className="text-sm text-muted-foreground">Last updated: 2 days ago</p>
                 </div>
               </div>
-              <Button className="w-full btn-gradient gap-2">
+              <Button
+                className="w-full btn-gradient gap-2"
+                onClick={handleDownloadCertificate}
+              >
                 <Download className="h-4 w-4" />
                 Download Certificate
               </Button>

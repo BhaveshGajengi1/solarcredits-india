@@ -1,6 +1,6 @@
 // SRC Token Contract Configuration
 // Deployed on Arbitrum Sepolia
-export const SRC_TOKEN_ADDRESS = "0x00DEfe6c8fE01610406Aa58538952D5b7d92c56e";
+export const SRC_TOKEN_ADDRESS = "0x4Ca501bF7b580628813efC4cFF2F50810d997c65";
 
 // Standard ERC-20 ABI for SRC token operations
 export const ERC20_ABI = [
@@ -11,12 +11,12 @@ export const ERC20_ABI = [
   "function totalSupply() view returns (uint256)",
   "function balanceOf(address owner) view returns (uint256)",
   "function allowance(address owner, address spender) view returns (uint256)",
-  
+
   // Write functions
   "function transfer(address to, uint256 amount) returns (bool)",
   "function approve(address spender, uint256 amount) returns (bool)",
   "function transferFrom(address from, address to, uint256 amount) returns (bool)",
-  
+
   // Events
   "event Transfer(address indexed from, address indexed to, uint256 value)",
   "event Approval(address indexed owner, address indexed spender, uint256 value)",
